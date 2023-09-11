@@ -144,6 +144,8 @@ echo -e "30.-  How to search pattern using egrep and regular expression (search 
 egrep 'UNIX|Linux' example.txt
 
 
-
+# [For Github Codespaces]
+# sudo apt-get install vim # for vimdiff
+# sudo unminimize # for man command
 
 
