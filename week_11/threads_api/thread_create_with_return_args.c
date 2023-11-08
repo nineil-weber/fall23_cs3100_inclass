@@ -17,18 +17,18 @@ void *mythread(void *arg) {
     myarg_t *args = (myarg_t *) arg;
     printf("args %d %d\n", args->a, args->b);
 
-//    // Error
-//    myret_t rvals;
-//    rvals.x = 1;
-//    rvals.y = 2;
-//    return (void *) &rvals;
+    // Error
+    myret_t rvals;
+    rvals.x = 1;
+    rvals.y = 2;
+    return (void *) &rvals;
 
-    // Correct
-    myret_t *rvals = malloc(sizeof(myret_t));
-//    assert(rvals != NULL);
-    rvals->x = 1;
-    rvals->y = 2;
-    return (void *) rvals;
+//    // Correct
+//    myret_t *rvals = malloc(sizeof(myret_t));
+////    assert(rvals != NULL);
+//    rvals->x = 1;
+//    rvals->y = 2;
+//    return (void *) rvals;
 }
 
 int main(int argc, char *argv[]) {
