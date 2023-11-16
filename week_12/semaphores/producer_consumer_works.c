@@ -100,6 +100,12 @@ void *consumer(void *arg) {
 }
 
 int main(int argc, char *argv[]) {
+    /* Note: This code should work for Mac users.
+     * For linux users, do the following changes:
+     *  - Sem_wait --> sem_wait
+     *  - Sem_post --> sem_post
+     *  - Sem_init(&mutex, 1) --> sem_init(&mutex, 0, 1)
+    */
     if (argc != 4) {
         fprintf(stderr, "usage: %s <buffersize> <loops> <consumers>\n", argv[0]);
         exit(1);

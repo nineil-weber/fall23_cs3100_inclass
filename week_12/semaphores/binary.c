@@ -26,7 +26,13 @@ void *child(void *arg) {
 }
 
 int main(int argc, char *argv[]) {
-    Sem_init(&mutex, 1); 
+    /* Note: This code should work for Mac users.
+     * For linux users, do the following changes:
+     *  - Sem_wait --> sem_wait
+     *  - Sem_post --> sem_post
+     *  - Sem_init(&mutex, 1) --> sem_init(&mutex, 0, 1)
+    */
+    Sem_init(&mutex, 1);
     pthread_t c1, c2;
     pthread_create(&c1, NULL, child, NULL);
     pthread_create(&c2, NULL, child, NULL);
